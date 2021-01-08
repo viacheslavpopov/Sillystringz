@@ -63,10 +63,10 @@ namespace Factory.Controllers
       {
         var returnedJoin = _db.EngineerMachine
           .Any(join => join.MachineId == MachineId && join.EngineerId == engineer.EngineerId);
-          if (!returnedJoin)
-          {
-            _db.EngineerMachine.Add(new EngineerMachine() { MachineId = MachineId, EngineerId = engineer.EngineerId });
-          }
+        if (!returnedJoin)
+        {
+          _db.EngineerMachine.Add(new EngineerMachine() { MachineId = MachineId, EngineerId = engineer.EngineerId });
+        }
       }
       _db.SaveChanges();
       return RedirectToAction("Details", new { id = engineer.EngineerId });

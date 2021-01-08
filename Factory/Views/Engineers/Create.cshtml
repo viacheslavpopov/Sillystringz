@@ -1,0 +1,26 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h3>Add a New Engineer</h3>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.FirstName)
+  @Html.TextBoxFor(model => model.FirstName, new { placeholder = "First Name", required="required"})
+
+  @Html.LabelFor(model => model.LastName)
+  @Html.TextBoxFor(model => model.LastName, new { placeholder = "Last Name", required="required"})
+
+  @Html.LabelFor(model => model.Phone)
+  @Html.TextBoxFor(model => model.Phone, new { placeholder = "Phone Number, e.g. xxx-xxx-xxxx", required="required"})
+
+  @Html.LabelFor(model => model.Email)
+  @Html.TextBoxFor(model => model.Email, new { placeholder = "Email Address, e.g. ada_l@sillystringz.com", required="required"})
+
+  <input type="submit" value="Save" class="btn btn-default" />
+}
+
+<h3>@Html.ActionLink("Show all engineers", "Index")</h3>

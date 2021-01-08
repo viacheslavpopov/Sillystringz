@@ -12,7 +12,7 @@
 
 This MVC web application is to keep track of a factory's machine repairs by managing their engineers and the machines they are licensed to fix. Engineers & machines can both be added to their prospective lists, and specifications can be added to designate which engineers are licensed to repair which machines. Engineers & Machines have a many-to-many relationship, where an engineer can repair many machines, and, vice versa, a machine can have many engineers licensed to repair it.
 
-![SQL Design Plan](TODO "Many-to-many Relationship Schema for Engineers & Machines")
+![SQL Design Plan](Factory/wwwroot/img/Factory_Schema.png "Many-to-many Relationship Schema for Engineers & Machines")
 
 ## Stretch Goals
 

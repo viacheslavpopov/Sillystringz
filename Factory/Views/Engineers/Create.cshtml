@@ -15,10 +15,10 @@
   @Html.TextBoxFor(model => model.LastName, new { placeholder = "Last Name", required="required"})
 
   @Html.LabelFor(model => model.Phone)
-  @Html.TextBoxFor(model => model.Phone, new { placeholder = "Phone Number, e.g. xxx-xxx-xxxx", required="required"})
+  @Html.TextBoxFor(model => model.Phone, new { placeholder = "e.g. xxx-xxx-xxxx", required="required"})
 
   @Html.LabelFor(model => model.Email)
-  @Html.TextBoxFor(model => model.Email, new { placeholder = "Email Address, e.g. ada_l@sillystringz.com", required="required"})
+  @Html.TextBoxFor(model => model.Email, new { placeholder = "e.g. ada_l@sillystringz.com", required="required"})
 
   <input type="submit" value="Save" class="btn btn-default" />
 }

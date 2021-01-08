@@ -1,0 +1,29 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Factory.Models.Engineer
+
+<h1>Engineer Details</h1>
+<hr />
+<h4>Engineer: @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h4>
+<h4>Phone: @Html.DisplayFor(model => model.Phone)</h4>
+<h4>Email: @Html.DisplayFor(model => model.Email)</h4>
+
+@if(@Model.Machines.Count == 0)
+{
+  <p>This engineer is not yet licensed for any machine repairs at Sillystringz's Factory.</p>
+}
+else
+{
+  <h4>Machine Licensures:</h4>
+  <ul>
+    @foreach(var join in Model.Machines)
+    {
+      <li>@join.Machine.MachineName</li>
+    }
+  </ul>
+}
+
+@* <h3>@Html.ActionLink("Add a new machine", "AddMachine", new { id = Model.MachineId })</h3> *@
+<h3>@Html.ActionLink("Back to engineer directory", "Index")</h3>

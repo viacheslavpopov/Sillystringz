@@ -28,6 +28,7 @@ namespace Factory.Controllers
       return View();
     }
 
+    [HttpPost]
     public ActionResult Create(Engineer engineer, int MachineId)
     {
       _db.Engineers.Add(engineer);
@@ -37,6 +38,15 @@ namespace Factory.Controllers
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      var thisEngineer = _db.Engineers
+        .Include(engineer => engineer.Machines)
+        .ThenInclude(join => join.Machine)
+        .FirstOrDefault(engineer => engineer.EngineerId == id);
+      return View(thisEngineer);
     }
   }
 }

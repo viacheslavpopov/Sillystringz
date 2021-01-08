@@ -3,11 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Dr. Sillystringz's Factory</title>
-    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
-    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+    <link rel='stylesheet' href="~/css/styles.css" type="text/css">
   </head>
   <body>
-    @RenderBody()
-    @Html.Partial("Footer")
+    <nav class="navbar navbar-expand-lg navbar-info bg-info justify-content-center">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active text-light" href="/">Home</a>
+        <a class="nav-item nav-link text-light" href="/engineers">Engineer Directory</a>
+        @* <a class="nav-link nav-link text-light" href="/engineers/create">Add New Engineer</a> *@
+        <a class="nav-item nav-link text-light" href="/machines">Machine Directory</a>
+        @* <a class="nav-item nav-link text-light" href="/machines/create">Add New Machine</a> *@
+      </div>
+    </nav>
+
+    <div class="container">
+      @RenderBody()
+    </div>
+
+    @Html.Partial("_Footer")
   </body>
 </html>

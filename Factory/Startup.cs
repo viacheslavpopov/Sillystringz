@@ -25,8 +25,8 @@ namespace Factory
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-          .AddDbContext<FactoryContext>(options => options
-          .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+        .AddDbContext<FactoryContext>(options => options
+        .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
     }
 
     public void Configure(IApplicationBuilder app)

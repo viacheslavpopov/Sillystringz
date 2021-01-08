@@ -1,0 +1,25 @@
+@{
+  Layout ="_Layout";
+}
+
+@model Factory.Models.Machine
+
+<h1>Machine Details</h1>
+<hr />
+<h4>Machine Name: @Html.DisplayFor(model => model.MachineName)</h4>
+<h4>Machine Description: @Html.DisplayFor(model => model.Description)</h4>
+
+@if(Model.Engineers.Count == 0)
+{
+  <p>This machine does not have any registered engineers to repair it.</p>
+}
+else
+{
+  <h4>Licensed Engineers</h4>
+  <ul>
+    @foreach(var join in Model.Engineers)
+    {
+      <li>@join.Engineer.LastName, @join.Engineer.FirstName </li>
+    }
+  </ul>
+}

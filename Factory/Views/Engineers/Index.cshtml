@@ -2,7 +2,7 @@
   Layout = "_Layout";
 }
 
-@using Factoroy.Models;
+@using Factory.Models;
 @model List<Factory.Models.Engineer>;
 
 <h1>Engineers</h1>
@@ -12,7 +12,7 @@
   <h3>No engineers have been added yet.</h3>
 }
 
-@foreach (Student student in ModelExpressionProvider)
+@foreach (Student student in Model)
 {
   <li>@Html.ActionLink($"{engineer.LastName}, {engineer.FirstName}", "Details", new { id = engineer.EngineerId }) </li>
 }

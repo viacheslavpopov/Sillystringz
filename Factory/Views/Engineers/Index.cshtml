@@ -1,0 +1,20 @@
+@{
+  Layout = "_Layout";
+}
+
+@using Factoroy.Models;
+@model List<Factory.Models.Engineer>;
+
+<h1>Engineers</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No engineers have been added yet.</h3>
+}
+
+@foreach (Student student in ModelExpressionProvider)
+{
+  <li>@Html.ActionLink($"{engineer.LastName}, {engineer.FirstName}", "Details", new { id = engineer.EngineerId }) </li>
+}
+
+<h3>@Html.ActionLink("Add a new engineer", "Create")</h3>

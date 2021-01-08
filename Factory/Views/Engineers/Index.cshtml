@@ -12,7 +12,7 @@
   <h3>No engineers have been added yet.</h3>
 }
 
-@foreach (Student student in Model)
+@foreach (Engineer engineer in Model)
 {
   <li>@Html.ActionLink($"{engineer.LastName}, {engineer.FirstName}", "Details", new { id = engineer.EngineerId }) </li>
 }

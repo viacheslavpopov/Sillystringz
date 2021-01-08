@@ -1,5 +1,7 @@
-using Microsoft.AspNetCore.Mvc;
 using Factory.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -31,6 +33,15 @@ namespace Factory.Controllers
       _db.Machines.Add(machine);
       _db.SaveChanges();
       return RedirectToAction("Index");
+    }
+
+    public ActionResult Details(int id)
+    {
+      var thisMachine = _db.Machines
+        .Include(machine => machine.Engineers)
+        .ThenInclude(join => join.Engineer)
+        .FirstOrDefault(machine => machine.MachineId == id);
+      return View(thisMachine);
     }
   }
 }

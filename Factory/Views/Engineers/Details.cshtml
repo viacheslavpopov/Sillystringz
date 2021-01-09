@@ -26,13 +26,14 @@ else
         @using (Html.BeginForm("DeleteJoin", "Engineers", new { id = Model.EngineerId }))
         {
           @Html.Hidden("joinId", @join.EngineerMachineId)
-          <input type="submit" value="Remove" class="btn btn-default" />
+          <input type="submit" value="Remove Machine" class="btn btn-default" />
         }
       }
     }
   </ul>
 }
 
+<h3>@Html.ActionLink("Edit engineer details", "Edit", new { id = Model.EngineerId })</h3>
 <h3>@Html.ActionLink("Add a new machine", "AddMachine", new { id = Model.EngineerId })</h3>
 <h3>@Html.ActionLink("Delete engineer", "Delete", new { id = Model.EngineerId})</h3>
 <h3>@Html.ActionLink("Back to engineer directory", "Index")</h3>

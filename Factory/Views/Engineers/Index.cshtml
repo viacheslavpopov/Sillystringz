@@ -15,10 +15,11 @@
 @foreach (Engineer engineer in Model)
 {
   <li>@Html.ActionLink($"{engineer.LastName}, {engineer.FirstName}", "Details", new { id = engineer.EngineerId }) </li>
+  @Html.ActionLink("Edit", "Edit", new { @class = "btn btn-primary" }, new { id = engineer.EngineerId })
   @using (Html.BeginForm("Delete", "Engineers", new { id = engineer.EngineerId}))
   {
     @Html.Hidden("engineerId, @engineer.EngineerId")
-  <input type="submit" value="Delete" class="btn btn-default"/>
+    <input type="submit" value="Delete" class="btn btn-default"/>
   }
 }
 

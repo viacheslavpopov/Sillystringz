@@ -15,6 +15,7 @@
 @foreach (Engineer engineer in Model)
 {
   <li>@Html.ActionLink($"{engineer.LastName}, {engineer.FirstName}", "Details", new { id = engineer.EngineerId }) </li>
+  <input type="submit" value="Delete" class="btn btn-default"/>
 }
 
 <h3>@Html.ActionLink("Add a new engineer", "Create")</h3>

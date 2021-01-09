@@ -19,7 +19,15 @@ else
   <ul>
     @foreach(var join in Model.Engineers)
     {
-      <li>@join.Engineer.LastName, @join.Engineer.FirstName </li>
+      if (join.Machine != null)
+      {
+        <li>@join.Engineer.LastName, @join.Engineer.FirstName </li>
+        @using (Html.BeginForm("DeleteJoin", "Machines", new { id = Model.MachineId }))
+        {
+          @Html.Hidden("joinId", @join.EngineerMachineId)
+          <input type="submit" value="Remove" class="btn btn-default" />
+        }
+      }
     }
   </ul>
 }

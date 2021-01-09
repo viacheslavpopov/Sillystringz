@@ -15,6 +15,7 @@
 @foreach (Machine machine in Model)
 {
   <li>@Html.ActionLink($"{machine.MachineName}", "Details", new { id = machine.MachineId })</li>
+  @Html.ActionLink("Edit", "Edit", new { @class = "btn btn-primary" }, new { id = machine.MachineId })
   @using (Html.BeginForm("Delete", "Machines", new { id = machine.MachineId}))
   {
     @Html.Hidden("machineId, @machine.MachineId")

@@ -1,4 +1,10 @@
-#footer {
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+div#footer {
+  letter-spacing: 5pt;
   text-align: center;
   text-transform: uppercase;
   position:fixed;

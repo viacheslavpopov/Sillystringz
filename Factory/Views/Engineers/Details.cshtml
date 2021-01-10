@@ -6,9 +6,12 @@
 
 <h1>Engineer Details</h1>
 <hr />
-<h4>Engineer: @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h4>
-<h4>Phone: @Html.DisplayFor(model => model.Phone)</h4>
-<h4>Email: @Html.DisplayFor(model => model.Email)</h4>
+<h4>Engineer:</h4>
+<p>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</p>
+<h4>Phone:</h4>
+<p>@Html.DisplayFor(model => model.Phone)</p>
+<h4>Email:</h4>
+<p>@Html.DisplayFor(model => model.Email)</p>
 
 @if(@Model.Machines.Count == 0)
 {
@@ -16,7 +19,7 @@
 }
 else
 {
-  <h4>Machine Licensing:</h4>
+  <h4>Machine Licenses:</h4>
   <ul>
     @foreach(var join in Model.Machines)
     {
@@ -26,7 +29,7 @@ else
         @using (Html.BeginForm("DeleteJoin", "Engineers", new { id = Model.EngineerId }))
         {
           @Html.Hidden("joinId", @join.EngineerMachineId)
-          <input type="submit" value="Remove Machine" class="btn btn-default" />
+          <input type="submit" value="Remove" class="btn btn-default" />
         }
       }
     }

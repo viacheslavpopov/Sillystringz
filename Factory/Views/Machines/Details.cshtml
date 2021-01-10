@@ -6,8 +6,10 @@
 
 <h1>Machine Details</h1>
 <hr />
-<h4>Name: @Html.DisplayFor(model => model.MachineName)</h4>
-<h4>Description: @Html.DisplayFor(model => model.Description)</h4>
+<h4>Name:</h4>
+<p>@Html.DisplayFor(model => model.MachineName)</p>
+<h4>Description:</h4>
+<p>@Html.DisplayFor(model => model.Description)</p>
 
 @if(Model.Engineers.Count == 0)
 {
@@ -15,7 +17,7 @@
 }
 else
 {
-  <h4>Licensed Engineers</h4>
+  <h4>Licensed Engineers:</h4>
   <ul>
     @foreach(var join in Model.Engineers)
     {

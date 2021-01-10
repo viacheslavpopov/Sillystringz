@@ -4,26 +4,37 @@
 
 @model Factory.Models.Engineer
 
-<h1>Edit Engineer Details For: @Html.DisplayFor(model => model.LastName), @Html.DisplayFor(model => model.FirstName)</h1>
+<h1>Edit Details For:</h1>
+<h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h2>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
 
-  @Html.LabelFor(model => model.FirstName)
-  @Html.EditorFor(model => model.FirstName)
+  <div class="form-group">
+    @Html.LabelFor(model => model.FirstName)
+    @Html.EditorFor(model => model.FirstName)
+  </div>
 
-  @Html.LabelFor(model => model.LastName)
-  @Html.EditorFor(model => model.LastName)
+  <div class="form-group">
+    @Html.LabelFor(model => model.LastName)
+    @Html.EditorFor(model => model.LastName)
+  </div>
 
-  @Html.LabelFor(model => model.Phone)
-  @Html.EditorFor(model => model.Phone)
+  <div class="form-group">
+    @Html.LabelFor(model => model.Phone)
+    @Html.EditorFor(model => model.Phone)
+  </div>
 
-  @Html.LabelFor(model => model.Email)
-  @Html.EditorFor(model => model.Email)
+  <div class="form-group">
+    @Html.LabelFor(model => model.Email)
+    @Html.EditorFor(model => model.Email)
+  </div>
 
-  @Html.Label("New machine licensing")
-  @Html.DropDownList("MachineId", (SelectList)ViewBag.MachineId, "-No new machines to add-")
+  <div class="form-group">
+    @Html.Label("Add Machine License")
+    @Html.DropDownList("MachineId", (SelectList)ViewBag.MachineId, "-No new machines to add-")
+  </div>
 
   <input type="submit" value="Save" class="btn btn-default" />
 }

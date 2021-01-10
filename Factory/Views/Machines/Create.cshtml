@@ -4,15 +4,20 @@
 
 @model Factory.Models.Machine
 
-<h3>Add a New Machine</h3>
+<h2>Add a New Machine</h2>
+<hr />
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.MachineName)
-  @Html.TextBoxFor(model => model.MachineName)
+  <div class="form-group">
+    @Html.LabelFor(model => model.MachineName)
+    @Html.TextBoxFor(model => model.MachineName)
+  </div>
 
-  @Html.LabelFor(model => model.Description)
-  @Html.TextBoxFor(model => model.Description)
+  <div class="form-group">
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+  </div>
 
   <input type ="submit" value="Add new machine" class="btn btn-default" />
 }

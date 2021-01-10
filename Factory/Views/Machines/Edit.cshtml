@@ -4,20 +4,27 @@
 
 @model Factory.Models.Machine
 
-<h1>Edit Machine Details For: @Html.DisplayFor(model => model.MachineName)</h1>
+<h1>Edit Machine Details For:</h1>
+<h2>@Html.DisplayFor(model => model.MachineName)</h2>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.MachineId)
 
-  @Html.LabelFor(model => model.MachineName)
-  @Html.EditorFor(model => model.MachineName)
+  <div class="form-group">
+    @Html.LabelFor(model => model.MachineName)
+    @Html.EditorFor(model => model.MachineName)
+  </div>
 
-  @Html.LabelFor(model => model.Description)
-  @Html.EditorFor(model => model.Description)
+  <div class="form-group">
+    @Html.LabelFor(model => model.Description)
+    @Html.EditorFor(model => model.Description)
+  </div>
 
-  @Html.Label("New engineer license")
-  @Html.DropDownList("EngineerId", (SelectList)ViewBag.EngineerId, "-No new engineers to add-")
+  <div class="form-group">
+    @Html.Label("New engineer license")
+    @* @Html.DropDownList("EngineerId", (SelectList)ViewBag.EngineerId, "-No new engineers to add-") *@
+  </div>
 
   <input type="submit" value="Save" class="btn btn-default" />
 }

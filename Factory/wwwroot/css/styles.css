@@ -3,6 +3,18 @@
   max-width: 1200px;
 }
 
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 10pt;
+  text-align: center;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 5pt;
+  text-align: center;
+}
+
 div#footer {
   letter-spacing: 10pt;
   text-align: center;
@@ -17,5 +29,18 @@ div#footer {
 }
 
 .card {
-  padding: 10pt;
+  margin: 20px;
+}
+
+img {
+  height: 350px;
+  width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border: 2px solid black;
+  box-shadow: 15px 15px 15px gray;
 }

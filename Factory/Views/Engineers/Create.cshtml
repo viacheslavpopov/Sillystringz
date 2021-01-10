@@ -4,21 +4,30 @@
 
 @model Factory.Models.Engineer
 
-<h3>Add a New Engineer</h3>
+<h2>Add a New Engineer</h2>
+<hr />
 
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.FirstName)
-  @Html.TextBoxFor(model => model.FirstName, new { placeholder = "First Name", required="required"})
+  <div class="form-group">
+    @Html.LabelFor(model => model.FirstName)
+    @Html.TextBoxFor(model => model.FirstName, new { placeholder = "First Name", required="required"})
+  </div>
 
-  @Html.LabelFor(model => model.LastName)
-  @Html.TextBoxFor(model => model.LastName, new { placeholder = "Last Name", required="required"})
+  <div class="form-group">
+    @Html.LabelFor(model => model.LastName)
+    @Html.TextBoxFor(model => model.LastName, new { placeholder = "Last Name", required="required"})
+  </div>
 
-  @Html.LabelFor(model => model.Phone)
-  @Html.TextBoxFor(model => model.Phone, new { placeholder = "e.g. xxx-xxx-xxxx", required="required"})
+  <div class="form-group">
+    @Html.LabelFor(model => model.Phone)
+    @Html.TextBoxFor(model => model.Phone, new { placeholder = "e.g. xxx-xxx-xxxx", required="required"})
+  </div>
 
-  @Html.LabelFor(model => model.Email)
-  @Html.TextBoxFor(model => model.Email, new { placeholder = "e.g. ada_l@sillystringz.com", required="required"})
+  <div class="form-group">
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email, new { placeholder = "e.g. ada_l@sillystringz.com", required="required"})
+  </div>
 
   <input type="submit" value="Save" class="btn btn-default" />
 }

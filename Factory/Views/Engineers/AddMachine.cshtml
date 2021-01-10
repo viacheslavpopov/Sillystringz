@@ -3,17 +3,20 @@
 }
 
 @model Factory.Models.Engineer
-<h1>License an Engineer to New Machine</h1>
+<h1>License a New Engineer</h1>
 <hr />
 
-<h4>New Machine Licensure for : @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</h4>
+<h4>New Machine License For:</h4>
+<p>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName)</p>
 
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.EngineerId)
 
-  @Html.Label("Select Machine:")
-  @Html.DropDownList("MachineId")
+  <div class="container">
+    @Html.Label("Select Machine:")
+    @Html.DropDownList("MachineId")
+  </div>
 
   <input type="submit" value="Save" class="btn btn-default" />
 }

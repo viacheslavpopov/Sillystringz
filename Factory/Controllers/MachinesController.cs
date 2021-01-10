@@ -18,8 +18,9 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      List<Machine> model = _db.Machines.ToList();
-      return View(model);
+      List<Machine> machineList = _db.Machines.ToList();
+      machineList.Sort((x, y) => string.Compare(x.MachineName, y.MachineName));
+      return View(machineList);
     }
 
     public ActionResult Create()

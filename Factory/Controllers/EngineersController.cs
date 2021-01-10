@@ -18,8 +18,9 @@ namespace Factory.Controllers
 
     public ActionResult Index()
     {
-      List<Engineer> model = _db.Engineers.ToList();
-      return View(model);
+      List<Engineer> engineerList = _db.Engineers.ToList();
+      engineerList.Sort((x, y) => string.Compare(x.LastName, y.LastName));
+      return View(engineerList);
     }
 
     public ActionResult Create()

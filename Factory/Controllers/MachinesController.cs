@@ -101,14 +101,28 @@ namespace Factory.Controllers
     }
 
     [HttpPost, ActionName("Delete")]
-    public ActionResult DeleteConfirmed(int id)
+    public ActionResult DeleteConfirmed(int id, int joinId)
     {
-      var thisMachine = _db.Machines
-        .Include(machine => machine.Engineers)
-        .ThenInclude(join => join.Engineer)
-        .FirstOrDefault(machine => machine.MachineId == id);
-      _db.Machines.Remove(thisMachine);
-      _db.SaveChanges();
+        if (joinId != 0)
+        {
+        var joinEntry = _db.EngineerMachine.FirstOrDefault(entry => entry.EngineerMachineId == joinId);
+        _db.EngineerMachine.Remove(joinEntry);
+        _db.SaveChanges();
+        var thisMachine = _db.Machines
+          .Include(machine => machine.Engineers)
+          .ThenInclude(join => join.Engineer)
+          .FirstOrDefault(machine => machine.MachineId == id);
+        _db.Machines.Remove(thisMachine);
+        _db.SaveChanges();
+        }
+        else {
+        var thisMachine = _db.Machines
+          .Include(machine => machine.Engineers)
+          .ThenInclude(join => join.Engineer)
+          .FirstOrDefault(machine => machine.MachineId == id);
+        _db.Machines.Remove(thisMachine);
+        _db.SaveChanges();
+        }
       return RedirectToAction("Index");
     }
 

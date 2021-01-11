@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace Factory.Models
 {
@@ -13,6 +14,7 @@ namespace Factory.Models
     public string LastName { get; set; }
     public string Phone { get; set; } //xxx-xxx-xxxx format
     public string Email { get; set; }
+    public DateTime LicenseRenewBy { get; set; }
     public virtual ICollection<EngineerMachine> Machines { get; set; }
   }
 }

@@ -29,7 +29,9 @@
     @Html.TextBoxFor(model => model.Email, new { placeholder = "e.g. ada_l@sillystringz.com", required="required"})
   </div>
 
-  <input type="submit" value="Save" class="btn btn-default" />
+  <div class="form-group">
+    <input type="submit" value="Save" class="btn btn-default" />
+  </div>
 }
 
 <h3>@Html.ActionLink("Show all engineers", "Index")</h3>

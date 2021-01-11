@@ -25,11 +25,15 @@ else
     {
       if (join.Machine != null)
       {
-        <li>Machines: @join.Machine.MachineName</li>
+        <div class="form-group">
+          <li>Machines: @join.Machine.MachineName</li>
+        </div>
         @using (Html.BeginForm("DeleteJoin", "Engineers", new { id = Model.EngineerId }))
         {
           @Html.Hidden("joinId", @join.EngineerMachineId)
-          <input type="submit" value="Remove" class="btn btn-default" />
+          <div class="form-group">
+            <input type="submit" value="Remove" class="btn btn-default" />
+          </div>
         }
       }
     }

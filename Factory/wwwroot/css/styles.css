@@ -15,6 +15,14 @@ h2 {
   text-align: center;
 }
 
+body {
+  background-color: rgb(189, 145, 189);
+  /* background-image: url('~/wwwroot/img/wires.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 div#footer {
   letter-spacing: 10pt;
   text-align: center;

@@ -27,7 +27,9 @@
     @Html.DropDownList("EngineerId", (SelectList)ViewBag.EngineerId, "-No new engineers to add-")
   </div>
 
-  <input type="submit" value="Save" class="btn btn-default" />
+  <div class="form-group">
+    <input type="submit" value="Save" class="btn btn-default" />
+  </div>
 }
 
 <h3>@Html.ActionLink("Back to machine details", "Details", new { id = Model.MachineId })</h3>

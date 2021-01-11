@@ -23,7 +23,9 @@ else
     {
       if (join.Machine != null)
       {
-        <li>@join.Engineer.LastName, @join.Engineer.FirstName </li>
+        <div class="form-group">
+          <li>@join.Engineer.LastName, @join.Engineer.FirstName </li>
+        </div>
         @using (Html.BeginForm("DeleteJoin", "Machines", new { id = Model.MachineId }))
         {
           @Html.Hidden("joinId", @join.EngineerMachineId)

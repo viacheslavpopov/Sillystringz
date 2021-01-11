@@ -134,6 +134,8 @@ When the project is opened on your local machine...
 
 As of 1.9.21, if a machine or engineer has a join entry assigned to its entry, an SQL foreign key error will display upon submission. Delete functionality works otherwise.
 
+Update: As of 1.10.21, delete engineer/machine with join entries exception resolved by mimicking Details controller, with it's three lines of .Include, .ThenInclude, & .FirstOrDefault to describe the entity being deleted.
+
 [Please report any bugs found here.](https://github.com/dani-t-codes/Sillystringz.Solution/issues)
 
 ### Legal, or License

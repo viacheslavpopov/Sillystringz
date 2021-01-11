@@ -1,10 +1,17 @@
-# Dr. Sillystringz Factory
+<div style="text-align: center;">
 
-#### Independent Project for Epicodus Coding School on ASP.NET Core MVC, Entity Framework, & Many-to-Many Relationships
+  # Dr. Sillystringz Factory
 
-#### Project Began on 1.8.2021
+  #### Independent Project for Epicodus Coding School on ASP.NET Core MVC, Entity Framework, & Many-to-Many Relationships
 
-#### By Danielle Thompson
+  #### Project Began on 1.8.2021. Last updated 1.10.2021.
+
+  #### By Danielle Thompson
+
+</div>
+
+#### Preview
+![Splash Page](Factory/wwwroot/img/Splash_Page.png "Screenshot of website splash page")
 
 ---
 
@@ -14,11 +21,25 @@ This MVC web application is to keep track of a factory's machine repairs by mana
 
 ![SQL Design Plan](Factory/wwwroot/img/Factory_Schema.png "Many-to-many Relationship Schema for Engineers & Machines")
 
+---
+
+## User Stories
+
+- As the factory manager, I need to be able to see a list of all engineers, and I need to be able to see a list of all machines.
+- As the factory manager, I need to be able to select a engineer, see their details, and see a list of all machines that engineer is licensed to repair. I also need to be able to select a machine, see its details, and see a list of all engineers licensed to repair it.
+- As the factory manager, I need to add new engineers to our system when they are hired. I also need to add new machines to our system when they are installed.
+- As the factory manager, I should be able to add new machines even if no engineers are employed. I should also be able to add new engineers even if no machines are installed
+- As the factory manager, I need to be able to add or remove machines that a specific engineer is licensed to repair. I also need to be able to modify this relationship from the other side, and add or remove engineers from a specific machine.
+- I should be able to navigate to a splash page that lists all engineers and machines. Users should be able to click on an individual engineer or machine to see all the engineers/machines that belong to it.
+
 ## Stretch Goals
 
-TODO
-
----
+- For deleting joinIds from a foreign model's view, I would prefer to have the "Remove" button redirect back to the "Details" view, not the Index page.
+- Additionally, it would be good to add in an "Are you sure" DeleteJoin page for the "Remove" buttons.
+- For scalability, the Index pages for Machines and Engineers would slow down upon load with many entries. Implementing a "Show X Number of Entries" for the cards that are generator per object, per page would help with load times.
+- Adding in multiple ways to sort the machines or engineers for the user to choice, and not just defaulting to an alphabetical sorting would be ideal.
+- For scalability, I would add a search bar in the list of machines and engineers.
+- When adding an engineer to a machine, the dropdown list can only shows a list of the available engineers' first names.
 
 ## Technologies Used/Required
 
@@ -30,6 +51,8 @@ TODO
 - ASP.NET MVC Core
 - Razor
 - [SQL Design Planner](https://ondras.zarovi.cz/sql/demo/)
+- [Pixabay](https://www.pixabay.com/)
+- [Unsplash](https://unsplash.com/)
 - [Visual Code Studio](https://code.visualstudio.com/)
 
 ---
@@ -99,8 +122,8 @@ When the project is opened on your local machine...
 #### Setting up a Local Database
 
 - Download [MySQL Server](https://dev.mysql.com/downloads/file/?id=484914).
+- (Note: If you need additional assistance setting up MySQL, visit their [site](https://dev.mysql.com/doc/mysql-installation-excerpt/5.7/en/) for further instructions.
 - Download [MySQL Workbench](https://dev.mysql.com/downloads/file/?id=484391).
-- (For more detailed instructions, if either of the above technologies are unfamiliar to you, visit [this site](https://www.learnhowtoprogram.com/c-and-net/getting-started-with-c/installing-and-configuring-mysql) and follow the instructions for your local OS).
 - Run `dotnet ef migrations add Initial`
   --> If there is an error stating "Unable to resolve project", this means the command wasn't run in the correct directory.
 - Entity creates three files in the Migrations directory.
@@ -128,16 +151,33 @@ When the project is opened on your local machine...
 - .DS_Store
 - appsettings.json
 
+#### Import Database with Entity Framework Core
+
+1. From your Terminal/CMD, navigate to the root directory of the project: `cd Desktop/Sillystringz.Solution/Factory`.
+2. Run the command `dotnet ef database update` to create the database on your local system.
+3. If any updates to the database are needed with code changes, run `dotnet ef migrations add <NewMigrationNameHere>`, then `dotnet ef database update` to complete the update.
+
 ---
 
 ## Known bugs
 
-As of 1.9.21, if a machine or engineer has a join entry assigned to its entry, an SQL foreign key error will display upon submission. Delete functionality works otherwise.
+_Resolved_ As of 1.9.21, if a machine or engineer has a join entry assigned to its entry, an SQL foreign key error will display upon submission. Delete functionality works otherwise.
 
-Update: As of 1.10.21, delete engineer/machine with join entries exception resolved by mimicking Details controller, with it's three lines of .Include, .ThenInclude, & .FirstOrDefault to describe the entity being deleted.
+Update: As of 1.10.21, delete engineer/machine with join entries exception resolved by mimicking Details controller, with it's three lines of .Include, .ThenInclude, & .FirstOrDefault to describe the entity being deleted. However, when viewing the affiliated foreign model's Details page after deletion, an exception is thrown for null entries.
+
+Update: As of 1.10.21 8:31pm, exception bug appears to be fixed.
+
+---
+
+As of 1.10.21, once the webpage gets to a certain smaller viewport (under 991px wide), the Bootstrap navigation bar changes to a small, collapsed button in the top right corner. I cannot click on and expand the button on my local system to access it's associated links, but the two main home pages are still on the splash to access the rest of the site and bypass this button.
 
 [Please report any bugs found here.](https://github.com/dani-t-codes/Sillystringz.Solution/issues)
 
-### Legal, or License
+### Contact
+
+Find me on [GitHub](https://github.com/dani-t-codes/)
+Email: danithompson74@gmail.com
+
+### License
 
 _MIT_ Copyright (c) 2021 _*Danielle Thompson*_

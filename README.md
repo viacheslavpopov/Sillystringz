@@ -6,8 +6,6 @@
 
   #### Project Began on 1.8.2021. Last updated 1.10.2021.
 
-  #### By Danielle Thompson
-
 </div>
 
 #### Preview

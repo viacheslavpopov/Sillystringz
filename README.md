@@ -95,7 +95,7 @@ This MVC web application is to keep track of a factory's machine repairs by mana
 #### Clone or Download the Project
 
 ##### To Clone
-1. Once you have Git installed on your computer, go to this (GitHub repository)[https://github.com/dani-t-codes/Sillystringz.Solution].
+1. Once you have Git installed on your computer, go to this GitHub repository.
 2. Click the Green 'Code' button.
 3. Copy the HTTPS link, and open a Terminal or CMD on your local system.
 4. In the Terminal/CMD, navigate to your Desktop with the command `cd Desktop`.
@@ -168,13 +168,6 @@ Update: As of 1.10.21 8:31pm, exception bug appears to be fixed.
 ---
 
 As of 1.10.21, once the webpage gets to a certain smaller viewport (under 991px wide), the Bootstrap navigation bar changes to a small, collapsed button in the top right corner. I cannot click on and expand the button on my local system to access it's associated links, but the two main home pages are still on the splash to access the rest of the site and bypass this button.
-
-[Please report any bugs found here.](https://github.com/dani-t-codes/Sillystringz.Solution/issues)
-
-### Contact
-
-Find me on [GitHub](https://github.com/dani-t-codes/)
-Email: danithompson74@gmail.com
 
 ### License
 
